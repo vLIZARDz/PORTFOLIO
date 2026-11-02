@@ -120,7 +120,7 @@ li:focus-within > .submenu {
   background: var(--text);
 }
 
-/* ===== Профіль ===== */
+/*Профіль*/
 .hero {
   position: relative;
   text-align: center;
@@ -218,7 +218,7 @@ li:focus-within > .submenu {
 }
 .gallery figure:hover img { transform: scale(1.06); }
 
-/* ===== Контакти ===== */
+/*Контакти*/
 .contacts {
   background: var(--pink);
   text-align: center;
@@ -286,7 +286,7 @@ li:focus-within > .submenu {
 .footer__social a { width: 28px; height: 28px; transition: transform .2s, color .2s; }
 .footer__copy { font-size: 12px; opacity: .6; }
 
-/*Планшет: 2 фото в ряд*/
+/*Планшет*/
 @media (max-width: 992px) {
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .menu { gap: 12px; }

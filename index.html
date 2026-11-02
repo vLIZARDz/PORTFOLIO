@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Віта Закора — сайт-візитка</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== ШАПКА З МЕНЮ ===== -->
+  <header class="header" id="top">
+    <span class="circle circle--header" aria-hidden="true"></span>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="burger" aria-label="Відкрити меню">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="nav" aria-label="Головне меню">
+      <ul class="menu">
+        <li>
+          <a href="#top">Головна</a>
+          <ul class="submenu">
+            <li><a href="#hero">Профіль</a></li>
+            <li>
+              <a href="#about">Коротко про мене</a>
+              <ul class="submenu">
+                <li><a href="#about">Освіта</a></li>
+                <li><a href="#about">Інтереси</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#about">Про мене</a>
+          <ul class="submenu">
+            <li><a href="#about">Біографія</a></li>
+            <li>
+              <a href="#skills">Навички</a>
+              <ul class="submenu">
+                <li><a href="#skills">C++ / Python</a></li>
+                <li><a href="#skills">Дизайн</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#portfolio">Портфоліо</a>
+          <ul class="submenu">
+            <li>
+              <a href="#portfolio">Роботи</a>
+              <ul class="submenu">
+                <li><a href="#portfolio">Фото 1–2</a></li>
+                <li><a href="#portfolio">Фото 3–4</a></li>
+              </ul>
+            </li>
+            <li><a href="#portfolio">Проєкти</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#contacts">Контакти</a>
+          <ul class="submenu">
+            <li><a href="#contacts">Соцмережі</a></li>
+            <li>
+              <a href="#form">Написати мені</a>
+              <ul class="submenu">
+                <li><a href="#form">Форма зворотного зв’язку</a></li>
+                <li><a href="mailto:vita@example.com">E-mail</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== ПРОФІЛЬ ===== -->
+    <section class="hero" id="hero">
+      <span class="circle circle--hero" aria-hidden="true"></span>
+      <div class="hero__photo">
+        <img src="img/vita.jpg" alt="Віта Закора">
+      </div>
+      <h1 class="hero__name">Віта Закора</h1>
+      <p class="hero__info">17 років, Кривий Ріг</p>
+    </section>
+
+    <!-- ===== ПРО МЕНЕ ===== -->
+    <section class="about" id="about">
+      <h2>Про мене</h2>
+      <p>Я Віта, студентка</p>
+      <p>Вивчаю інженерію програмного забезпечення в ДУЕТ</p>
+      <p>Цікавлюся програмуванням та інформаційними технологіями</p>
+    </section>
+
+    <!-- ===== НАВИЧКИ ===== -->
+    <section class="skills" id="skills">
+      <h2>Навички</h2>
+      <div class="skills__card">
+        <span class="circle circle--card-left" aria-hidden="true"></span>
+        <span class="circle circle--card-right" aria-hidden="true"></span>
+
+        <article class="skill">
+          <img src="img/vscode.png" alt="Visual Studio Code">
+          <p class="skill__name">C++<br>Python</p>
+          <div class="stars" role="img" aria-label="Рівень: 2 з 5">
+            <span class="on">★</span><span class="on">★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </article>
+
+        <article class="skill">
+          <img src="img/canva.png" alt="Canva">
+          <p class="skill__name">Дизайн</p>
+          <div class="stars" role="img" aria-label="Рівень: 4 з 5">
+            <span class="on">★</span><span class="on">★</span><span class="on">★</span><span class="on">★</span><span>★</span>
+          </div>
+        </article>
+
+        <article class="skill">
+          <img src="img/figma.png" alt="Figma">
+          <p class="skill__name">Дизайн</p>
+          <div class="stars" role="img" aria-label="Рівень: 3 з 5">
+            <span class="on">★</span><span class="on">★</span><span class="on">★</span><span>★</span><span>★</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== ПОРТФОЛІО (4 → 2 → 1 фото) ===== -->
+    <section class="portfolio" id="portfolio">
+      <h2>Портфоліо</h2>
+      <div class="gallery">
+        <figure><img src="img/photo1.jpg" alt="Робота 1"></figure>
+        <figure><img src="img/photo2.jpg" alt="Робота 2"></figure>
+        <figure><img src="img/photo3.jpg" alt="Робота 3"></figure>
+        <figure><img src="img/photo4.jpg" alt="Робота 4"></figure>
+      </div>
+    </section>
+
+    <!-- ===== КОНТАКТИ ===== -->
+    <section class="contacts" id="contacts">
+      <h2>Контакти</h2>
+      <div class="social">
+        <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M21.5 2.5 2.5 10l6.2 2.2L18 6l-7.4 7.4V19l3.1-3.4L18 19z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.2" cy="6.8" r="0.8" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="mailto:vita@example.com" aria-label="E-mail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="2.5" y="5" width="19" height="14" rx="2"/>
+            <path d="m3 7 9 6.5L21 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Додатково: форма зворотного зв’язку -->
+      <form class="form" id="form" action="mailto:vita@example.com" method="post" enctype="text/plain">
+        <h3>Напишіть мені</h3>
+        <input type="text" name="name" placeholder="Ваше ім’я" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <textarea name="message" rows="4" placeholder="Повідомлення" required></textarea>
+        <button type="submit">Надіслати</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== ФУТЕР ===== -->
+  <footer class="footer">
+    <nav aria-label="Меню у футері">
+      <ul>
+        <li><a href="#top">Головна</a></li>
+        <li><a href="#about">Про мене</a></li>
+        <li><a href="#portfolio">Портфоліо</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+      </ul>
+    </nav>
+    <div class="footer__social">
+      <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M21.5 2.5 2.5 10l6.2 2.2L18 6l-7.4 7.4V19l3.1-3.4L18 19z"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.2" cy="6.8" r="0.8" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+    <p class="footer__copy">© 2026 Віта Закора</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+/*  Змінні та базові стилі */
+:root {
+  --pink: #f8d3de;
+  --pink-light: #fbe6ec;
+  --gray: #efefef;
+  --text: #111;
+  --white: #fff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Raleway", Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+h2 { font-size: 22px; font-weight: 500; margin-bottom: 40px; }
+
+section { scroll-margin-top: 20px; }
+
+/* Декоративні кола */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--pink-light);
+  z-index: 0;
+}
+
+/*Шапка / меню*/
+.header {
+  position: relative;
+  z-index: 10;
+  padding: 20px 16px 10px;
+}
+.circle--header { width: 80px; height: 80px; top: -40px; left: -40px; }
+
+.nav { position: relative; z-index: 2; }
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.menu > li { position: relative; }
+
+.menu > li > a {
+  display: block;
+  min-width: 190px;
+  padding: 6px 10px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #555;
+  transition: color .2s, border-color .2s;
+}
+.menu a:hover { color: #d9608a; }
+.menu > li > a:hover { border-color: #d9608a; }
+
+/* Підменю */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  background: var(--white);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+  border-radius: 0 0 10px 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: .2s;
+  z-index: 20;
+}
+.submenu li { position: relative; }
+.submenu a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.submenu a:hover { background: var(--pink-light); }
+
+.submenu .submenu {
+  top: 0;
+  left: 100%;
+  border-radius: 10px;
+}
+
+li:hover > .submenu,
+li:focus-within > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* Бургер (тільки мобільні) */
+.menu-toggle { display: none; }
+.burger {
+  display: none;
+  position: relative;
+  z-index: 3;
+  width: 34px;
+  height: 26px;
+  margin-left: auto;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.burger span {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--text);
+}
+
+/* ===== Профіль ===== */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 50px 16px 40px;
+}
+.circle--hero { width: 110px; height: 110px; right: -55px; bottom: 20px; }
+
+.hero__photo {
+  position: relative;
+  z-index: 1;
+  max-width: 270px;
+  margin: 0 auto 14px;
+  background: var(--pink);
+}
+.hero__photo img {
+  width: 100%;
+  aspect-ratio: 270 / 190;
+  object-fit: cover;
+  object-position: center top;
+}
+.hero__name { position: relative; z-index: 1; font-size: 18px; font-weight: 600; }
+.hero__info { position: relative; z-index: 1; font-size: 11px; margin-bottom: 30px; }
+
+.link-underline {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  min-width: 190px;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-bottom: 1px solid #555;
+}
+.link-underline:hover { color: #d9608a; border-color: #d9608a; }
+
+/*Про мене */
+.about {
+  background: var(--pink);
+  text-align: center;
+  padding: 80px 16px 100px;
+}
+.about p { font-size: 13px; margin-bottom: 20px; }
+
+/*Навички */
+.skills {
+  background: var(--gray);
+  text-align: center;
+  padding: 60px 16px;
+}
+.skills h2 { margin-bottom: 30px; }
+
+.skills__card {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 20px 30px;
+  background: var(--white);
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-around;
+  gap: 24px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.circle--card-left  { width: 56px; height: 56px; top: -4px; left: 4px; }
+.circle--card-right { width: 56px; height: 56px; top: -4px; right: 4px; }
+
+.skill { position: relative; z-index: 1; flex: 1 1 140px; }
+.skill img { width: 64px; height: 64px; object-fit: contain; margin: 0 auto 8px; border-radius: 10px; }
+.skill__name { font-size: 10px; min-height: 30px; margin-bottom: 12px; }
+
+.stars { font-size: 26px; letter-spacing: 2px; line-height: 1; }
+.stars span { color: #bdbdbd; }
+.stars span.on { color: #000; }
+
+/*Портфоліо*/
+.portfolio { padding: 60px 20px; text-align: center; }
+
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.gallery figure {
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--pink);
+}
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform .3s;
+}
+.gallery figure:hover img { transform: scale(1.06); }
+
+/* ===== Контакти ===== */
+.contacts {
+  background: var(--pink);
+  text-align: center;
+  padding: 50px 16px 60px;
+}
+.contacts h2 { margin-bottom: 24px; }
+
+.social, .footer__social { display: flex; justify-content: center; gap: 36px; }
+.social a { width: 40px; height: 40px; transition: transform .2s, color .2s; }
+.social a:hover, .footer__social a:hover { transform: scale(1.15); color: #d9608a; }
+.social svg, .footer__social svg { width: 100%; height: 100%; }
+
+/* Форма */
+.form {
+  max-width: 420px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+.form h3 { font-size: 16px; font-weight: 500; text-align: center; margin-bottom: 4px; }
+.form input, .form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 14px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--white);
+  outline: none;
+  resize: vertical;
+}
+.form input:focus, .form textarea:focus { border-color: #d9608a; }
+.form button {
+  padding: 12px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--white);
+  background: #d9608a;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.form button:hover { background: #c04a75; }
+
+/*Футер*/
+.footer {
+  background: var(--text);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 16px 20px;
+}
+.footer ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  margin-bottom: 20px;
+}
+.footer ul a { font-size: 14px; }
+.footer a:hover { color: var(--pink); }
+.footer__social { gap: 24px; margin-bottom: 16px; }
+.footer__social a { width: 28px; height: 28px; transition: transform .2s, color .2s; }
+.footer__copy { font-size: 12px; opacity: .6; }
+
+/*Планшет: 2 фото в ряд*/
+@media (max-width: 992px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .menu { gap: 12px; }
+  .menu > li > a { min-width: 140px; }
+}
+
+/*Мобільний*/
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: 1fr; }
+
+  .burger { display: flex; }
+
+  .nav {
+    display: none;
+    margin-top: 16px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+    padding: 8px 0;
+  }
+  .menu-toggle:checked ~ .nav { display: block; }
+
+  .menu { flex-direction: column; gap: 0; }
+  .menu > li > a {
+    min-width: 0;
+    text-align: left;
+    padding: 12px 20px;
+    border-bottom: 0;
+    font-weight: 600;
+  }
+
+  /* підменю завжди розкриті й з відступом */
+  .submenu,
+  .submenu .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+    padding-left: 16px;
+  }
+  .submenu a { padding: 8px 20px; }
+
+  .skills__card { flex-direction: column; align-items: center; }
+  .circle--header { width: 60px; height: 60px; top: -30px; left: -30px; }
+}
